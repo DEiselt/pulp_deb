@@ -85,7 +85,7 @@ def publish(
     structured,
     checkpoint=False,
     signing_service_pk=None,
-    publish_upstream_release_fields=None,
+    publish_upstream_release_fields=None,  # Hello World
 ):
     """
     Use provided publisher to create a Publication based on a RepositoryVersion.
@@ -430,7 +430,7 @@ class _ComponentHelper:
             self.parent.add_metadata(gz_package_index)
         # Publish Sources Indices file
         if self.source_index_file_info is not None:
-            (source_index_file, source_index_path) = self.source_index_file_info
+            source_index_file, source_index_path = self.source_index_file_info
             source_index_file.close()
             gz_source_index_path = _zip_file(source_index_path)
             source_index = PublishedMetadata.create_from_file(
